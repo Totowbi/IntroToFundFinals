@@ -12,37 +12,85 @@ public class Act5M
             System.out.println("Sample Program by Mr. de Guzman Tobit");
             System.out.println("================================================");
 
-            String[] descr ={"DVD Player", "VHS Player", "Gas Stove", "Television" };
-            float[] price={2000, 1500, 800,   1000};
-            int[] code= {111, 222, 333, 444};
+            String[] descr = {"\tDVD Player", "\tVHS Player", "\tGas Stove", "\tTelevision"};
+            float[] price = {2000, 1500, 800, 1000};
+            int[] code = {111, 222, 333, 444};
             
-            System.out.println ("Choose your item");
+            System.out.println("Choose your item:");
             System.out.println("Item\tDescription\tPrice");
             
-            for (int i=0; i<code.length; i++){
-                System.out.println(code[i]+"\t"+ descr[i]+ "\t" +price[i]);
+            for (int i = 0; i < code.length; i++) {
+                System.out.println(code[i] + "\t" + descr[i] + "\t" + price[i]);
             }
+
             System.out.println("================================================");
             System.out.println("\t  ABC Marketing Inc.");
             System.out.println("\tOrder Processing Program");
             System.out.println("================================================");
             System.out.print("Choose an item from the code: ");
-            choose=in.nextInt();
-            System.out.println ("Item Code: ");
-            System.out.println ("Description: " );
-            System.out.println ("Unit Price: "  );
-            System.out.println ("Quantity: ");
-            System.out.println ("Total Cost: "  );
-          
+            choose = in.nextInt();
+
+            if (choose == 111) {
+                System.out.print("Enter Quantity: ");
+                int qty = in.nextInt();
+                System.out.println("================================================");
+                float total = price[0] * qty;
+                System.out.println("Item Code    : " + code[0]);
+                System.out.println("Description  : " + descr[0]);
+                System.out.println("Unit Price   : " + price[0]);
+                System.out.println("Quantity     : " + qty);
+                System.out.println("Total Cost   : " + total);
+            }
+            else if (choose == 222) {
+                System.out.print("Enter Quantity: ");
+                int qty = in.nextInt();
+                System.out.println("================================================");
+                float total = price[1] * qty;
+                System.out.println("Item Code    : " + code[1]);
+                System.out.println("Description  : " + descr[1]);
+                System.out.println("Unit Price   : " + price[1]);
+                System.out.println("Quantity     : " + qty);
+                System.out.println("Total Cost   : " + total);
+            }
+            else if (choose == 333) {
+                System.out.print("Enter Quantity: ");
+                int qty = in.nextInt();
+                System.out.println("================================================");
+               
+                float total = price[2] * qty;
+                System.out.println("Item Code    : " + code[2]);
+                System.out.println("Description  : " + descr[2]);
+                System.out.println("Unit Price   : " + price[2]);
+                System.out.println("Quantity     : " + qty);
+                System.out.println("Total Cost   : " + total);
+            }
+            else if (choose == 444) {
+                System.out.print("Enter Quantity: ");
+                int qty = in.nextInt();
+                System.out.println("================================================");
+                
+                float total = price[3] * qty;
+                System.out.println("Item Code    : " + code[3]);
+                System.out.println("Description  : " + descr[3]);
+                System.out.println("Unit Price   : " + price[3]);
+                System.out.println("Quantity     : " + qty);
+                System.out.println("Total Cost   : " + total);
+            }
+            else {
+                System.out.println("================================================");
+                System.out.println("Invalid item code!");
+            }
 
             System.out.println("================================================");
-            System.out.println("Want to try again (Y/N)? ");
-            System.out.println("================================================");
+            System.out.print("Want to try again (Y/N): ");
             again = in.next();
+            System.out.println("================================================");
         }
 
         if (again.equals("N") || again.equals("n")) {
             System.out.println("Thank you for using my code!");
+        } else {
+            System.out.println("Invalid input please try again");
         }
     }
 }
